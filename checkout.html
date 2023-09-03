@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce - Checkout</title>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-stone-200 flex flex-col h-screen">
+    <header
+      class="z-10 flex bg-slate-950 shadow-xl shadow-slate-400 px-8 py-4 justify-between sticky top-0"
+    >
+      <a href="./"><img
+        class="h-1"
+        src="./assets/logo/hashtag.svg"
+        alt="Logo do Magazine Hashtag."
+      /></a>
+    </header>
+
+    <form class="flex w-full px-5 gap-4 py-10 grow">
+      <section id="dados-usuario" class="w-1/3 bg-slate-300 rounded-lg border border-slate-400 py-5">
+        <p class="mb-5 text-center font-bold text-slate-950">Seus dados</p>
+        <div class="flex flex-col px-10 py-3">
+          <label for="nome" class="font-bold text-sm mb-2 text-slate-700">Nome Completo</label>
+          <input id="nome" type="text" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="John Doe" required>
+        </div>
+
+        <div class="flex flex-col px-10 py-3">
+          <label for="email" class="font-bold text-sm mb-2 text-slate-700">Email</label>
+          <input id="email" type="text" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="johnDoe@gmail.com" required>
+        </div>
+
+        <div class="flex flex-col px-10 py-3">
+          <label for="numero" class="font-bold text-sm mb-2 text-slate-700">Telefone de Contato</label>
+          <input id="numero" type="tel" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="(43) 99888-7766" required>
+        </div>
+
+        <div class="flex flex-col px-10 py-3">
+          <label for="cpf" class="font-bold text-sm mb-2 text-slate-700">CPF</label>
+          <input id="cpf" type="number" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="777.666.000-10" required>
+        </div>
+      </section>
+      
+      <section id="pagamento-entrega" class="w-1/3 bg-slate-300 rounded-lg border border-slate-400 py-5">
+        <p class="mb-5 text-center font-bold text-slate-950">Pagamento e Entrega</p>
+
+        <div class="flex flex-col px-10 py-3">
+          <label for="numero-cartao" class="font-bold text-sm mb-2 text-slate-700">Número do Cartão</label>
+          <input id="numero-cartao" type="number" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="1111 1111 1111 1111" required>
+        </div>
+        
+        <div class="flex flex-col px-10 py-3">
+          <label for="cep" class="font-bold text-sm mb-2 text-slate-700">CEP</label>
+          <input id="cep" type="text" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="00000-000" required>
+        </div>
+
+        <div class="flex w-1/2">
+          <div class="flex flex-col px-10 py-3">
+            <label for="cvv" class="font-bold text-sm mb-2 text-slate-700">CVV</label>
+            <input id="cvv" type="number" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="222" required>
+          </div>
+          <div class="flex flex-col px-10 py-3">
+            <label for="data-expiracao" class="font-bold text-sm mb-2 text-slate-700">Data de Validade</label>
+            <input id="data-expiracao" type="text" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="12/05/2038" required>
+          </div>
+        </div>
+
+        <div class="flex flex-col px-10 py-3">
+          <label for="endereco" class="font-bold text-sm mb-2 text-slate-700">Endereço</label>
+          <input id="endereco" type="text" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="Rua Duke de Caxias" required>
+        </div>
+
+        <div class="flex w-1/2">
+          <div class="flex flex-col px-10 py-3">
+            <label for="numero" class="font-bold text-sm mb-2 text-slate-700">Número da Casa</label>
+            <input id="numero" type="number" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="182" required>
+          </div>
+          <div class="flex flex-col px-10 py-3">
+            <label for="complemento" class="font-bold text-sm mb-2 text-slate-700">Bairro</label>
+            <input id="complemento" type="text" class="rounded-md outline-none p-2 border-2 border-slate-400 focus:border-slate-600" placeholder="Centro">
+          </div>
+        </div>
+      </section>
+      <section id="produtos-checkout" class="w-1/3 bg-slate-300 rounded-lg border border-slate-400 py-5">
+        <section id="container-produtos-checkout" class="h-4/5 overflow-y-auto px-2"></section>
+
+        <section id="celula-checkout" class="flex flex-col px-2 h-1/5 justify-around">
+          <p id="preco-total" class="bg-slate-200 rounded-lg text-green-700 p-1 text-center text-lg">Total: 0</p>
+          <button class="rounded-lg bg-green-700 text-slate-200 p-3 hover:bg-green-800 duration-200" type="submit" id="finalizar-compra-checkout">Finalizar Compra</button>
+        </section>
+      </section>
+    </form>
+
+    <script type="module" src="./checkout.js"></script>
+  </body>
+</html>
